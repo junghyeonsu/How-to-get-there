@@ -1,0 +1,333 @@
+.explain{
+  font-size: 15px;
+}
+
+#header{
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px
+}
+
+#user{
+  position: absolute;
+  top:5%;
+  left:5%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+}
+
+#buttons{
+  text-align: center;
+}
+
+#canvas{
+  border: 1px solid black;
+}
+
+.container{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template:
+  "aside main footer" 400px
+  /200px 800px 200px
+}
+
+#canvas{
+  grid-area:main;
+}
+
+#stage{
+  grid-area:aside;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#block{
+  grid-area:footer;
+  border: 1px solid black;
+  text-align: center;
+}
+
+canvas {
+   background-color: #eee;
+ }
+
+#start{
+  display: none;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+ }
+
+#start:hover{
+  color:red;
+}
+
+
+
+
+/* stage 영역 */
+/* Blocks 영역 */
+/* 게임 방법, 블럭 소개 버튼 */
+.button_slide {
+  color: #FFF;
+  border: 2px solid rgb(216, 2, 134);
+  margin: 3px;
+  border-radius: 0px;
+  padding: 8px 50px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D80286;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+/* 지금 스테이지 */
+.now_stage{
+  color: #FFF;
+  border: 3px solid yellow;
+  margin: 3px;
+  border-radius: 0px;
+  padding: 8px 50px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 yellow;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.now_stage:hover{
+  box-shadow: inset 300px 0 0 0 yellow;
+  color:black;
+}
+
+/* 클리어한 스테이지 */
+.clear_stage{
+  color: #FFF;
+  border: 2px solid white;
+  margin: 3px;
+  border-radius: 0px;
+  padding: 8px 50px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 white;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.clear_stage:hover{
+  box-shadow: inset 300px 0 0 0 white;
+  color:black;
+}
+
+
+.layout-font{
+  color: #FFF;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.slide_right:hover {
+  box-shadow: inset 300px 0 0 0 #D80286;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 100px #D80286;
+}
+
+#stage,
+#block{
+  height: 100%;
+  margin: 0;
+  background: #162944;
+}
+
+
+
+/* 게임 방법, 블럭 소개 버튼 */
+.button_slide_top {
+  color: black;
+  border: 2px solid rgb(216, 2, 134);
+  margin: 2px;
+  border-radius: 0px;
+  padding: 0px 50px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D80286;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.layout-font-btn:hover{
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.slide_top:hover {
+  box-shadow: inset 0 150px 0 0 #D80286;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: white;
+}
+
+/* block_intro 모달 */
+
+#block_intro_modal{
+  display:none;
+}
+
+#block_intro{
+  display: grid;
+  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(5, 150px);
+  gap: 20px 10px;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* block_1_caption */
+#block_1_caption{
+  position:relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3); /* 캡션 뒷배경 */
+  padding: 10px;
+  padding-left: 60px; /* 왼쪽 여백 */
+  line-height: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:100px; /* 가로 길이 */
+}
+/* block_intro header */
+#introduction:nth-child(1){
+  grid-column: span 6;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+#block_1_figure:nth-child(2){
+    grid-column: 2/span 2;
+    position: relative;
+}
+
+/* block_2_caption */
+#block_2_caption{
+  position:relative;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3); /* 캡션 뒷배경 */
+  padding: 10px;
+  padding-left: 200px; /* 왼쪽 여백 */
+  line-height: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:230px; /* 가로 길이 */
+}
+
+#block_2_figure:nth-child(3){
+  grid-column: 5/ span 2;
+  position: relative;
+}
+
+
+/* game-intro-modal */
+
+
+#game_intro_modal{
+  display: none;
+}
+
+#game_intro{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* game_intro header */
+#game_introduction{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* 설명 칸 */
+#game_intro_explain{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+
+/* 닫기 버튼 */
+.block_intro_close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* 닫기버튼 hover , focus */
+.block_intro_close:hover,
+.block_intro_close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

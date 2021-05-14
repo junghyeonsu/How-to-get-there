@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="HowToGetThere.css">
+  <head>
+    <meta charset="utf-8">
+    <title>How to get there?</title>
+  </head>
+  <body onload="startGame()">
+      <!-- 게임 제목 -->
+      <div id="header">How to get there?</div>
+    <div class="container">
+      <div id="content" class="div">
+        <!-- 공과 스테이지를 그려줄 캔버스
+          canvas와 js를 이용해서 공을 그려서 벽과 부딪히고
+          스테이지를 통과하고 장애물을 통과 등등을 구현  -->
+        <canvas id="canvas" width=800 height=400>
+        </canvas>
+
+      </div>
+      <!-- 스테이지들 : 무슨 스테이지가 있고 지금 현재 클리어한 스테이지는
+      무엇이고 클릭을 하면 그 스테이지로 이동하도록 하는 영역-->
+      <div id="stage" class="div"><p class="layout-font">Stages</p>
+
+        <div class="button_slide slide_right">Stage1</div>
+        <div class="button_slide slide_right">Stage2</div>
+        <div class="button_slide slide_right">Stage3</div>
+        <div class="button_slide slide_right">Stage4</div>
+        <div class="button_slide slide_right">Stage5</div>
+        <div class="button_slide slide_right">Stage6</div>
+        <div class="button_slide slide_right">Stage7</div>
+        <div class="button_slide slide_right">Stage8</div>
+        <div class="button_slide slide_right">Stage9</div>
+
+      </div>
+      <!-- 사용가능한 블럭들 : 스테이지마다 꼭 사용해야하는 블럭들을
+        보여주는 영역-->
+      <div id="block" class="div">
+        <p class="layout-font">Blocks</p>
+          <div class="button_slide slide_left" id="block_1">
+            <p><strong>block_1</strong></p>
+            MUST USE:<span id="block_1_use">1</span>
+          </div>
+          <div class="button_slide slide_left" id="block_2">
+        <p ><strong>block_2</strong></p>
+        MUST USE:<span id="block_2_use">1</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="buttons">
+      <!-- 게임 방법을 알려주는 창을 띄우는 버튼 -->
+    <div id="game_intro_button" class="button_slide_top slide_top"><p class="layout-font-btn"><strong>게임 방법</strong></p> </div>
+      <!-- 블럭들을 소개해주는 창을 띄우는 버튼 -->
+    <div id="block_intro_button" class="button_slide_top slide_top"><p class="layout-font-btn"><strong>블럭 소개</strong></p></div>
+    </div>
+
+    <!-- block_intro modal -->
+    <div id="block_intro_modal">
+
+    <div id="block_intro">
+      <div id="introduction" class="item">BLOCK INTRO</div>
+
+      <figure id = "block_1_figure" class="item">
+      <img src="./images/block_1.png" alt="block_1" />
+       <figcaption id="block_1_caption">Block_1</figcaption>
+     </figure>
+
+     <figure id = "block_2_figure" class="item">
+     <img src="./images/block_2.png" alt="block_2" />
+      <figcaption id="block_2_caption">Block_2</figcaption>
+    </figure>
+
+      <span class="block_intro_close">&times;</span>
+    </div>
+</div>
+
+<!-- game_intro modal -->
+<div id="game_intro_modal">
+  <div id="game_intro">
+    <div id="game_introduction">GAME INTRO</div>
+    <div id="game_intro_explain">
+      안녕하세요? 이 게임은 제가 만든게임이에요 ^^
+    </div>
+    <span class="block_intro_close">&times;</span>
+  </div>
+</div>
+
+
+    <!-- 스타트 버튼 -->
+    <div id="start">
+    START
+  </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="HowToGetThere.js"></script>
+    <script type="text/javascript" src="HowToGetThere_stage1.js"></script>
+  </body>
+</html>
